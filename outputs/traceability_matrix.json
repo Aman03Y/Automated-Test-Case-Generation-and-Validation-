@@ -1,0 +1,17 @@
+{
+    "total_requirements": 1,
+    "covered_count": 0,
+    "partially_covered_count": 1,
+    "missing_count": 0,
+    "matrix": [
+        {
+            "requirement_id": "REQ-001",
+            "requirement_description": "User login functionality requirement.",
+            "mapped_testcases": [
+                "TC001"
+            ],
+            "testcase_count": 1,
+            "status": "Partially Covered"
+        }
+    ]
+}

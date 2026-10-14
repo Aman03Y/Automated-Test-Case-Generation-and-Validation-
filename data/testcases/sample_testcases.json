@@ -1,0 +1,75 @@
+[
+    {
+        "id": "TC001",
+        "title": "Successful Login with Valid Credentials",
+        "description": "Verify that a registered user can log into the system with valid email and password.",
+        "steps": [
+            "Navigate to the login page",
+            "Enter valid email and valid password",
+            "Click on the 'Login' button"
+        ],
+        "expected_result": "User is authenticated successfully and redirected to dashboard.",
+        "priority": "High",
+        "requirement_id": "REQ-001"
+    },
+    {
+        "id": "TC002",
+        "title": "Account Lockout on 5 Invalid Login Attempts",
+        "description": "Verify that account is locked after 5 consecutive incorrect password entries.",
+        "steps": [
+            "Navigate to the login page",
+            "Enter registered email and wrong password 5 times in a row"
+        ],
+        "expected_result": "Account is locked and an error message is displayed.",
+        "priority": "High",
+        "requirement_id": "REQ-002"
+    },
+    {
+        "id": "TC003",
+        "title": "User Login Success Scenario",
+        "description": "Verify customer login with valid credentials.",
+        "steps": [
+            "Go to login screen",
+            "Provide user email and correct password",
+            "Press Login button"
+        ],
+        "expected_result": "Customer logs in successfully to user dashboard.",
+        "priority": "High",
+        "requirement_id": "REQ-001"
+    },
+    {
+        "id": "TC004",
+        "title": "Update Profile Details",
+        "description": "Verify user can update profile details such as name and phone number.",
+        "steps": [
+            "Log into the application",
+            "Go to Profile Settings",
+            "Update phone number and click Save"
+        ],
+        "expected_result": "Profile details updated successfully and confirmation prompt appears.",
+        "priority": "Medium",
+        "requirement_id": "REQ-004"
+    },
+    {
+        "id": "TC005",
+        "title": "Incomplete Profile Update Test",
+        "description": "",
+        "steps": [],
+        "expected_result": "",
+        "priority": "Low",
+        "requirement_id": ""
+    },
+    {
+        "id": "TC006",
+        "title": "Password Reset via Email Link",
+        "description": "Verify customer receives password reset link on registered email.",
+        "steps": [
+            "Click 'Forgot Password' on login screen",
+            "Enter registered email address",
+            "Click 'Send Reset Link' button"
+        ],
+        "expected_result": "Password reset email link sent to inbox.",
+        "priority": "High",
+        "requirement_id": "REQ-003"
+    }
+]

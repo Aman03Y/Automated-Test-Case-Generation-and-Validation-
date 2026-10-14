@@ -1,0 +1,7 @@
+SOFTWARE REQUIREMENT SPECIFICATION (SRS)
+
+REQ-001: User can log into the application using valid email and password credentials.
+REQ-002: System shall lock user account after 5 consecutive failed login attempts.
+REQ-003: Customer can reset password via email verification link.
+REQ-004: User can update profile details including name, phone number, and avatar.
+REQ-005: System shall allow users to search products by title, category, and price range.

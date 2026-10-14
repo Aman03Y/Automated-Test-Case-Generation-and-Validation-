@@ -1,0 +1,13 @@
+.git
+.gitignore
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+node_modules
+frontend/node_modules
+frontend/dist
+.DS_Store
+uploads/*
+outputs/*
+test_cases_1000.json

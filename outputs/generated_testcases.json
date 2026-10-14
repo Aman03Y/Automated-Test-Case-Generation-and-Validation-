@@ -1,0 +1,182 @@
+[
+  {
+    "id": "TC-GEN-0001",
+    "title": "Verify Log into the application using valid email and password cred — Positive / Happy Path [REQ-001 POS]",
+    "description": "POSITIVE SCENARIO for REQ-001: Verify that the system correctly fulfills \"log into the application using valid email and password cred\" under valid conditions and expected user flow. Requirement: \"User can log into the application using valid email and password credentials.\" Focus: happy-path, valid-flow, success-confirmation for REQ-001.",
+    "steps": [
+      "Precondition: User/session is in valid state for 'log into the application using valid email and password cred'",
+      "Provide valid inputs as per requirement specifications for 'log into the application using valid email and password cred'",
+      "Trigger the primary action (log into the application using valid email and password credentials) via UI / API",
+      "Verify successful outcome: system completes 'log into the application using valid email and password cred' without errors and shows success confirmation"
+    ],
+    "expected_result": "POSITIVE EXPECTED: Operation succeeds. The system fulfills 'log into the application using valid email and password cred' per REQ-001 and displays appropriate success confirmation with correct state update.",
+    "priority": "High",
+    "requirement_ids": [
+      "REQ-001"
+    ],
+    "module": "Authentication",
+    "requirement_id": "REQ-001"
+  },
+  {
+    "id": "TC-GEN-0002",
+    "title": "Verify Log into the application using valid email and password cred — Invalid / Negative Input Handling [REQ-001 NEG invalid]",
+    "description": "NEGATIVE SCENARIO for REQ-001: Verify that the system gracefully handles INVALID or incorrect inputs for \"log into the application using valid email and password cred\" and does NOT perform the operation. (Requirement REQ-001 error-handling check) Focus: malformed, empty, forbidden-value handling for REQ-001. Must not succeed.",
+    "steps": [
+      "Precondition: Reset state before testing INVALID input for 'log into the application using valid email and password cred'",
+      "Inject INVALID or malformed input (empty, wrong format, disallowed value, SQL-like payload) for 'log into the application using valid email and password cred'",
+      "Attempt to trigger the action with the invalid data",
+      "Observe system response: expect inline validation error, no state change, and no crash"
+    ],
+    "expected_result": "NEGATIVE EXPECTED: System REJECTS invalid input with a clear, user-friendly error message. No unintended state change or data corruption occurs. Error is logged.",
+    "priority": "High",
+    "requirement_ids": [
+      "REQ-001"
+    ],
+    "module": "Authentication",
+    "requirement_id": "REQ-001"
+  },
+  {
+    "id": "TC-GEN-0003",
+    "title": "Verify Lock user account after 5 consecutive failed login attempts — Positive / Happy Path [REQ-002 POS]",
+    "description": "POSITIVE SCENARIO for REQ-002: Verify that the system correctly fulfills \"lock user account after 5 consecutive failed login attempts\" under valid conditions and expected user flow. Requirement: \"System shall lock user account after 5 consecutive failed login attempts.\" Focus: happy-path, valid-flow, success-confirmation for REQ-002.",
+    "steps": [
+      "Precondition: User/session is in valid state for 'lock user account after 5 consecutive failed login attempts'",
+      "Provide valid inputs as per requirement specifications for 'lock user account after 5 consecutive failed login attempts'",
+      "Trigger the primary action (lock user account after 5 consecutive failed login attempts) via UI / API",
+      "Verify successful outcome: system completes 'lock user account after 5 consecutive failed login attempts' without errors and shows success confirmation"
+    ],
+    "expected_result": "POSITIVE EXPECTED: Operation succeeds. The system fulfills 'lock user account after 5 consecutive failed login attempts' per REQ-002 and displays appropriate success confirmation with correct state update.",
+    "priority": "Critical",
+    "requirement_ids": [
+      "REQ-002"
+    ],
+    "module": "Security",
+    "requirement_id": "REQ-002"
+  },
+  {
+    "id": "TC-GEN-0004",
+    "title": "Verify Lock user account after 5 consecutive failed login attempts — Invalid / Negative Input Handling [REQ-002 NEG invalid]",
+    "description": "NEGATIVE SCENARIO for REQ-002: Verify that the system gracefully handles INVALID or incorrect inputs for \"lock user account after 5 consecutive failed login attempts\" and does NOT perform the operation. (Requirement REQ-002 error-handling check) Focus: malformed, empty, forbidden-value handling for REQ-002. Must not succeed.",
+    "steps": [
+      "Precondition: Reset state before testing INVALID input for 'lock user account after 5 consecutive failed login attempts'",
+      "Inject INVALID or malformed input (empty, wrong format, disallowed value, SQL-like payload) for 'lock user account after 5 consecutive failed login attempts'",
+      "Attempt to trigger the action with the invalid data",
+      "Observe system response: expect inline validation error, no state change, and no crash"
+    ],
+    "expected_result": "NEGATIVE EXPECTED: System REJECTS invalid input with a clear, user-friendly error message. No unintended state change or data corruption occurs. Error is logged.",
+    "priority": "High",
+    "requirement_ids": [
+      "REQ-002"
+    ],
+    "module": "Security",
+    "requirement_id": "REQ-002"
+  },
+  {
+    "id": "TC-GEN-0005",
+    "title": "Verify Reset password via email verification link — Positive / Happy Path [REQ-003 POS]",
+    "description": "POSITIVE SCENARIO for REQ-003: Verify that the system correctly fulfills \"reset password via email verification link\" under valid conditions and expected user flow. Requirement: \"Customer can reset password via email verification link.\" Focus: happy-path, valid-flow, success-confirmation for REQ-003.",
+    "steps": [
+      "Precondition: User/session is in valid state for 'reset password via email verification link'",
+      "Provide valid inputs as per requirement specifications for 'reset password via email verification link'",
+      "Trigger the primary action (reset password via email verification link) via UI / API",
+      "Verify successful outcome: system completes 'reset password via email verification link' without errors and shows success confirmation"
+    ],
+    "expected_result": "POSITIVE EXPECTED: Operation succeeds. The system fulfills 'reset password via email verification link' per REQ-003 and displays appropriate success confirmation with correct state update.",
+    "priority": "High",
+    "requirement_ids": [
+      "REQ-003"
+    ],
+    "module": "Authentication",
+    "requirement_id": "REQ-003"
+  },
+  {
+    "id": "TC-GEN-0006",
+    "title": "Verify Reset password via email verification link — Invalid / Negative Input Handling [REQ-003 NEG invalid]",
+    "description": "NEGATIVE SCENARIO for REQ-003: Verify that the system gracefully handles INVALID or incorrect inputs for \"reset password via email verification link\" and does NOT perform the operation. (Requirement REQ-003 error-handling check) Focus: malformed, empty, forbidden-value handling for REQ-003. Must not succeed.",
+    "steps": [
+      "Precondition: Reset state before testing INVALID input for 'reset password via email verification link'",
+      "Inject INVALID or malformed input (empty, wrong format, disallowed value, SQL-like payload) for 'reset password via email verification link'",
+      "Attempt to trigger the action with the invalid data",
+      "Observe system response: expect inline validation error, no state change, and no crash"
+    ],
+    "expected_result": "NEGATIVE EXPECTED: System REJECTS invalid input with a clear, user-friendly error message. No unintended state change or data corruption occurs. Error is logged.",
+    "priority": "High",
+    "requirement_ids": [
+      "REQ-003"
+    ],
+    "module": "Authentication",
+    "requirement_id": "REQ-003"
+  },
+  {
+    "id": "TC-GEN-0007",
+    "title": "Verify Update profile details including name, phone number, and ava — Positive / Happy Path [REQ-004 POS]",
+    "description": "POSITIVE SCENARIO for REQ-004: Verify that the system correctly fulfills \"update profile details including name, phone number, and ava\" under valid conditions and expected user flow. Requirement: \"User can update profile details including name, phone number, and avatar.\" Focus: happy-path, valid-flow, success-confirmation for REQ-004.",
+    "steps": [
+      "Precondition: User/session is in valid state for 'update profile details including name, phone number, and ava'",
+      "Provide valid inputs as per requirement specifications for 'update profile details including name, phone number, and ava'",
+      "Trigger the primary action (update profile details including name, phone number, and avatar) via UI / API",
+      "Verify successful outcome: system completes 'update profile details including name, phone number, and ava' without errors and shows success confirmation"
+    ],
+    "expected_result": "POSITIVE EXPECTED: Operation succeeds. The system fulfills 'update profile details including name, phone number, and ava' per REQ-004 and displays appropriate success confirmation with correct state update.",
+    "priority": "Medium",
+    "requirement_ids": [
+      "REQ-004"
+    ],
+    "module": "User Profile",
+    "requirement_id": "REQ-004"
+  },
+  {
+    "id": "TC-GEN-0008",
+    "title": "Verify Update profile details including name, phone number, and ava — Invalid / Negative Input Handling [REQ-004 NEG invalid]",
+    "description": "NEGATIVE SCENARIO for REQ-004: Verify that the system gracefully handles INVALID or incorrect inputs for \"update profile details including name, phone number, and ava\" and does NOT perform the operation. (Requirement REQ-004 error-handling check) Focus: malformed, empty, forbidden-value handling for REQ-004. Must not succeed.",
+    "steps": [
+      "Precondition: Reset state before testing INVALID input for 'update profile details including name, phone number, and ava'",
+      "Inject INVALID or malformed input (empty, wrong format, disallowed value, SQL-like payload) for 'update profile details including name, phone number, and ava'",
+      "Attempt to trigger the action with the invalid data",
+      "Observe system response: expect inline validation error, no state change, and no crash"
+    ],
+    "expected_result": "NEGATIVE EXPECTED: System REJECTS invalid input with a clear, user-friendly error message. No unintended state change or data corruption occurs. Error is logged.",
+    "priority": "High",
+    "requirement_ids": [
+      "REQ-004"
+    ],
+    "module": "User Profile",
+    "requirement_id": "REQ-004"
+  },
+  {
+    "id": "TC-GEN-0009",
+    "title": "Verify Allow users to search products by title, category, and price — Positive / Happy Path [REQ-005 POS]",
+    "description": "POSITIVE SCENARIO for REQ-005: Verify that the system correctly fulfills \"allow users to search products by title, category, and price\" under valid conditions and expected user flow. Requirement: \"System shall allow users to search products by title, category, and price range.\" Focus: happy-path, valid-flow, success-confirmation for REQ-005.",
+    "steps": [
+      "Precondition: User/session is in valid state for 'allow users to search products by title, category, and price'",
+      "Provide valid inputs as per requirement specifications for 'allow users to search products by title, category, and price'",
+      "Trigger the primary action (allow users to search products by title, category, and price range) via UI / API",
+      "Verify successful outcome: system completes 'allow users to search products by title, category, and price' without errors and shows success confirmation"
+    ],
+    "expected_result": "POSITIVE EXPECTED: Operation succeeds. The system fulfills 'allow users to search products by title, category, and price' per REQ-005 and displays appropriate success confirmation with correct state update.",
+    "priority": "High",
+    "requirement_ids": [
+      "REQ-005"
+    ],
+    "module": "Search",
+    "requirement_id": "REQ-005"
+  },
+  {
+    "id": "TC-GEN-0010",
+    "title": "Verify Allow users to search products by title, category, and price — Invalid / Negative Input Handling [REQ-005 NEG invalid]",
+    "description": "NEGATIVE SCENARIO for REQ-005: Verify that the system gracefully handles INVALID or incorrect inputs for \"allow users to search products by title, category, and price\" and does NOT perform the operation. (Requirement REQ-005 error-handling check) Focus: malformed, empty, forbidden-value handling for REQ-005. Must not succeed.",
+    "steps": [
+      "Precondition: Reset state before testing INVALID input for 'allow users to search products by title, category, and price'",
+      "Inject INVALID or malformed input (empty, wrong format, disallowed value, SQL-like payload) for 'allow users to search products by title, category, and price'",
+      "Attempt to trigger the action with the invalid data",
+      "Observe system response: expect inline validation error, no state change, and no crash"
+    ],
+    "expected_result": "NEGATIVE EXPECTED: System REJECTS invalid input with a clear, user-friendly error message. No unintended state change or data corruption occurs. Error is logged.",
+    "priority": "High",
+    "requirement_ids": [
+      "REQ-005"
+    ],
+    "module": "Search",
+    "requirement_id": "REQ-005"
+  }
+]

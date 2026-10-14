@@ -1,0 +1,27 @@
+[
+    {
+        "id": "REQ-001",
+        "requirement": "User can log into the application using valid email and password credentials.",
+        "category": "Authentication"
+    },
+    {
+        "id": "REQ-002",
+        "requirement": "System shall lock user account after 5 consecutive failed login attempts.",
+        "category": "Security"
+    },
+    {
+        "id": "REQ-003",
+        "requirement": "Customer can reset password via email verification link.",
+        "category": "Authentication"
+    },
+    {
+        "id": "REQ-004",
+        "requirement": "User can update profile details including name, phone number, and avatar.",
+        "category": "User Profile"
+    },
+    {
+        "id": "REQ-005",
+        "requirement": "System shall allow users to search products by title, category, and price range.",
+        "category": "Search"
+    }
+]

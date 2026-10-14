@@ -1,0 +1,44 @@
+{
+    "coverage": 100.0,
+    "duplicates": 0,
+    "quality_score": 100.0,
+    "missing_requirements": [],
+    "failed_testcases": [],
+    "score_breakdown": {
+        "overall_score": 100.0,
+        "grade": "Grade A",
+        "coverage": 100.0,
+        "duplicate_rate": 0.0,
+        "average_testcase_score": 100.0,
+        "pass_count": 1,
+        "warning_count": 0,
+        "fail_count": 0,
+        "score_breakdown": {
+            "coverage": 35.0,
+            "average_quality": 35.0,
+            "duplicate_penalty": 20.0,
+            "formatting": 10.0
+        },
+        "visual_summary": "Excellent",
+        "coverage_score_max_40": 35.0,
+        "completeness_score_max_25": 35.0,
+        "duplicate_score_max_20": 20.0,
+        "formatting_score_max_15": 10.0
+    },
+    "duplicate_details": [],
+    "recommendations": {
+        "testcase_recommendations": [],
+        "project_recommendations": [],
+        "uncovered_requirement_recommendations": []
+    },
+    "summary": {
+        "total_requirements": 1,
+        "covered_requirements": 1,
+        "total_testcases": 1,
+        "passed_testcases": 1,
+        "warning_testcases": 0,
+        "failed_testcases_count": 0,
+        "grade": "Grade A",
+        "visual_summary": "Excellent"
+    }
+}
