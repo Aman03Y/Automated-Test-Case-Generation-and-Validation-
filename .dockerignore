@@ -1,13 +1,20 @@
+# Git
 .git
 .gitignore
-.venv
-__pycache__
-*.pyc
-.pytest_cache
-node_modules
-frontend/node_modules
-frontend/dist
-.DS_Store
-uploads/*
-outputs/*
-test_cases_1000.json
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.venv/
+venv/
+ENV/
+
+# Environment Variables
+.env
+.env.*
+
+# Docker
+Dockerfile
+.dockerignoredocker build -t <your-id>/my-backend:v1 .
