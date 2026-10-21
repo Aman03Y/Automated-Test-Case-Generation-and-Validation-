@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Card } from "../components/Card";
 import { FileUploader } from "../components/FileUploader";
+import axios from "axios";
 import { apiService } from "../services/api";
 import type { AutoFixResponse } from "../types";
 import { Loader } from "../components/Loader";
@@ -16,7 +17,18 @@ export const Page2Validation: React.FC = () => {
       setResult(res);
     } catch (e) {
       console.error(e);
-      alert("Error validating file");
+      if (axios.isAxiosError(e) && !e.response) {
+        alert(
+          "Backend is not reachable. Run: uv run uvicorn backend.app:app --reload --port 8000 and refresh.",
+        );
+      } else if (axios.isAxiosError(e) && e.response) {
+        const d = (e.response.data as any)?.detail || e.response.data;
+        alert(
+          `Validation failed: ${typeof d === "string" ? d : JSON.stringify(d)}`,
+        );
+      } else {
+        alert("Error validating file: " + String(e));
+      }
     } finally {
       setLoading(false);
     }

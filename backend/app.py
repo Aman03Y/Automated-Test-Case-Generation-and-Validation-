@@ -122,3 +122,14 @@ async def root():
         "docs_url": "/docs",
         "openapi_spec": "/openapi.json",
     }
+
+
+@app.get("/api/health", summary="API Health Probe")
+async def api_health():
+    """Lightweight probe used by frontend to detect if backend is reachable."""
+    return {"status": "ok"}
+
+
+@app.get("/health", summary="Health Probe (alt)")
+async def health():
+    return {"status": "ok"}

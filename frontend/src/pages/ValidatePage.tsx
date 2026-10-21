@@ -11,6 +11,7 @@ import {
   FileCheck2,
   FileText,
 } from "lucide-react";
+import axios from "axios";
 import { apiService } from "../services/api";
 import type { AutoFixResponse } from "../types";
 import { generatePdfReport } from "../utils/generatePdfReport";
@@ -116,9 +117,27 @@ export const ValidatePage: React.FC = () => {
       localStorage.setItem("latest_validation_report", JSON.stringify(res));
     } catch (error) {
       console.error(error);
-      alert("Error validating file");
+      if (axios.isAxiosError(error) && !error.response) {
+        alert(
+          "Backend is not reachable (ERR_CONNECTION_REFUSED).\n\n" +
+            "Fix: start the backend in a separate terminal:\n" +
+            "  cd E:\\Abhau && uv run uvicorn backend.app:app --reload --port 8000\n\n" +
+            "Then refresh this page and try again.\n" +
+            "Check http://localhost:8000/docs opens.",
+        );
+      } else if (axios.isAxiosError(error) && error.response) {
+        const detail =
+          (error.response.data as any)?.detail || error.response.data;
+        alert(
+          `Validation failed: ${typeof detail === "string" ? detail : JSON.stringify(detail)}`,
+        );
+      } else {
+        alert("Error validating file: " + String(error));
+      }
     } finally {
       setLoading(false);
+      // allow re-uploading same file
+      e.target.value = "";
     }
   };
 

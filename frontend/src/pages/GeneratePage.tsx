@@ -12,6 +12,7 @@ import {
   Copy,
   Check,
 } from "lucide-react";
+import axios from "axios";
 import { apiService } from "../services/api";
 import type { GeneratorResponse } from "../types";
 
@@ -52,9 +53,15 @@ export const GeneratePage: React.FC = () => {
       // If upload-and-generate also returns requirements dict, try to capture
       // (fallback: we have requirements via separate fetch if needed)
     } catch (err: any) {
-      const msg =
-        err?.response?.data?.detail || err?.message || "Generation failed";
-      setError(typeof msg === "string" ? msg : JSON.stringify(msg));
+      if (axios.isAxiosError(err) && !err.response) {
+        setError(
+          "Backend is not reachable (ERR_CONNECTION_REFUSED). Run: uv run uvicorn backend.app:app --reload --port 8000 then refresh.",
+        );
+      } else {
+        const msg =
+          err?.response?.data?.detail || err?.message || "Generation failed";
+        setError(typeof msg === "string" ? msg : JSON.stringify(msg));
+      }
     } finally {
       setLoading(false);
       // reset file input
@@ -78,16 +85,21 @@ export const GeneratePage: React.FC = () => {
       });
       setResult(res);
     } catch (err: any) {
-      const msg =
-        err?.response?.data?.detail || err?.message || "Generation failed";
-      const detail = typeof msg === "string" ? msg : JSON.stringify(msg);
-      setError(detail);
-      // Hint if no requirements have been uploaded
-      if (detail.toLowerCase().includes("no requirements")) {
+      if (axios.isAxiosError(err) && !err.response) {
         setError(
-          detail +
-            " — please upload a requirement document first using the file picker above.",
+          "Backend is not reachable (ERR_CONNECTION_REFUSED). Run: uv run uvicorn backend.app:app --reload --port 8000 then refresh.",
         );
+      } else {
+        const msg =
+          err?.response?.data?.detail || err?.message || "Generation failed";
+        const detail = typeof msg === "string" ? msg : JSON.stringify(msg);
+        setError(detail);
+        if (detail.toLowerCase().includes("no requirements")) {
+          setError(
+            detail +
+              " — please upload a requirement document first using the file picker above.",
+          );
+        }
       }
     } finally {
       setLoading(false);

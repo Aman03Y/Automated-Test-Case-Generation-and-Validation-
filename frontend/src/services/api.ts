@@ -7,15 +7,48 @@ import type {
   TraceabilityMatrixResponse,
 } from "../types";
 
+// Use Vite proxy in dev when VITE_API_BASE_URL is not set.
+// In dev: leave empty -> requests go to same origin and Vite proxies /api -> http://localhost:8000
+// In prod (Vercel + Render): set VITE_API_BASE_URL=https://your-api.onrender.com
 const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
+  (import.meta.env.VITE_API_BASE_URL as string | undefined)?.replace(
+    /\/$/,
+    "",
+  ) || "";
 
 export const apiClient = axios.create({
   baseURL: API_BASE_URL,
+  timeout: 120000,
   headers: {
     "Content-Type": "application/json",
   },
 });
+
+// Friendly network error interceptor — helps diagnose ERR_CONNECTION_REFUSED
+apiClient.interceptors.response.use(undefined, (error) => {
+  if (axios.isAxiosError(error) && !error.response) {
+    // Network error = backend not running, CORS, or timeout
+    const backendUrl = API_BASE_URL || "http://localhost:8000 (via Vite proxy)";
+    console.error(
+      `[API] Network Error — backend unreachable at ${backendUrl}. Is the backend running? Run: uv run uvicorn backend.app:app --reload --port 8000`,
+    );
+  }
+  return Promise.reject(error);
+});
+
+export async function isBackendAlive(): Promise<boolean> {
+  try {
+    await apiClient.get("/", { timeout: 3000 });
+    return true;
+  } catch {
+    try {
+      await apiClient.get("/api/health", { timeout: 3000 });
+      return true;
+    } catch {
+      return false;
+    }
+  }
+}
 
 export const apiService = {
   /**

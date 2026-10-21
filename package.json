@@ -1,0 +1,16 @@
+{
+  "name": "ai-testcase-validator-root",
+  "private": true,
+  "version": "1.0.0",
+  "packageManager": "bun",
+  "scripts": {
+    "dev": "concurrently -k -n API,WEB -c blue,green \"uv run uvicorn backend.app:app --reload --port 8000\" \"bun --cwd frontend run dev\"",
+    "dev:api": "uv run uvicorn backend.app:app --reload --port 8000",
+    "dev:web": "bun --cwd frontend run dev",
+    "build": "bun --cwd frontend run build",
+    "install:all": "uv sync && bun --cwd frontend install"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
